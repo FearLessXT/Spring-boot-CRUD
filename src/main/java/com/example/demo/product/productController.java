@@ -13,7 +13,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("api/v1/product")
 public class productController {
-    private static Map<String, Product> productRepo = new HashMap<>();
+    private final static Map<String, Product> productRepo = new HashMap<>();
 
     static {
         Product honey = new Product();
