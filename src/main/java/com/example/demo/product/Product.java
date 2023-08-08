@@ -1,5 +1,6 @@
 package com.example.demo.product;
 
+import com.example.demo.common.BadRequestException;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,4 +15,20 @@ public class Product {
     private String name;
     private String category;
     private LocalDateTime date;
+
+    //message
+    private String message;
+    private String status;
+
+    public void validate() {
+        if(id == null) {
+            throw new BadRequestException("ID is Required");
+        }
+        if(name == null) {
+            throw new BadRequestException("Name is Required");
+        }
+        if(category == null) {
+            throw new BadRequestException("Category is Required");
+        }
+    }
 }
