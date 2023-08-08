@@ -1,6 +1,6 @@
 # Spring-boot-CRUD
-Spring boot CRUD Operation
-  # Spring Boot CRUD App
+Getting Startd with Spring Boot
+  # Spring Boot CRUD
   A simple CRUD application built with Spring Boot.
 
   ## Technologies Used
