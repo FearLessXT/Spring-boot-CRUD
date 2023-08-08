@@ -15,11 +15,6 @@ public class Product {
     private String name;
     private String category;
     private LocalDateTime date;
-
-    //message
-    private String message;
-    private String status;
-
     public void validate() {
         if(id == null) {
             throw new BadRequestException("ID is Required");
