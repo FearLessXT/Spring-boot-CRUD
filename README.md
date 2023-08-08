@@ -24,10 +24,10 @@ Getting Startd with Spring Boot
   ## Endpoints
   | Method | Endpoint | Description |
   |:--|:--|:--|
-  | `GET` | `/api/v1/product/get` | Fetch all products |
+  | `GET` | `/api/v1/product/getAll` | Fetch all products |
   | `POST` | `/api/v1/product/add` | Create product | 
-  | `PUT` | `/api/v1/product/update{id}` | Update product by ID |
-  | `DELETE` | `/api/v1/product/delete/{id}` | Delete product by ID |
+  | `PUT` | `/api/v1/product/update` | Update product by ID |
+  | `DELETE` | `/api/v1/product/delete` | Delete product by ID |
   ## Project Structure
   - `src/main/java/com/example/demo/product` - Contains Java files
        - `Product.java` - The Entity Class
