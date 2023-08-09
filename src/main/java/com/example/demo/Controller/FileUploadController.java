@@ -1,4 +1,4 @@
-package com.example.demo.product;
+package com.example.demo.Controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

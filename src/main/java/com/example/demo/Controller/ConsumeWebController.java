@@ -1,4 +1,4 @@
-package com.example.demo.product;
+package com.example.demo.Controller;
 
 import com.example.demo.common.BadRequestException;
 import com.example.demo.model.Product;

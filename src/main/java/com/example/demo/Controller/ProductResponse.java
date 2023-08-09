@@ -1,4 +1,4 @@
-package com.example.demo.product;
+package com.example.demo.Controller;
 
 import lombok.Getter;
 import lombok.Setter;

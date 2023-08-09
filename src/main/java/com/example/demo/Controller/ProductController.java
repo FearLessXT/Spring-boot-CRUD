@@ -1,4 +1,4 @@
-package com.example.demo.product;
+package com.example.demo.Controller;
 
 import com.example.demo.SimpleFilter;
 import com.example.demo.common.BadRequestException;
@@ -40,8 +40,8 @@ public class ProductController {
         if(productList.size() == 0) {
             throw new ProductionNotFoundException();
         }
-        simpleFilter.doFilter(request, response);
-        return new ResponseEntity<>(productService.getProduct(), HttpStatus.OK);
+
+        return new ResponseEntity<>(productList, HttpStatus.OK);
     }
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ResponseEntity<Object> getProduct(@RequestBody Product product){
