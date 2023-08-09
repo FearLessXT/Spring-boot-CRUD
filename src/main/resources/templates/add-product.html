@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Add Product</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var productmodel = {
+                    id: "3",
+                    name: "Beer",
+                    category: "drink"
+                };
+                var requestJSON = JSON.stringify(productmodel);
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:8080/api/v1/product/add",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    data: requestJSON,
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function (data) {
+                        postMessage("Success")
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>
+        Click here to submit the form
+    </button>
+</body>
+</html>

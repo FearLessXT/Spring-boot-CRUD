@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Update Product</title>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var productmodel = {
+                    id: "3",
+                    name: "Pepsi",
+                    category: "drink"
+                };
+                var requestJSON = JSON.stringify(productmodel);
+
+                $.ajax({
+                    type: "PUT",
+                    url: "http://localhost:8080/api/v1/product/update",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    data: requestJSON,
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function (data) {
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button> Click to Confirm Update </button>
+</body>
+</html>
