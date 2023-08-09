@@ -10,5 +10,4 @@ import lombok.ToString;
 public class ProductResponse {
     private String status;
     private String message;
-    private Product product;
 }

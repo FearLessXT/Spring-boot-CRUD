@@ -1,4 +1,4 @@
-package com.example.demo.product;
+package com.example.demo.model;
 
 import com.example.demo.common.BadRequestException;
 import lombok.Getter;

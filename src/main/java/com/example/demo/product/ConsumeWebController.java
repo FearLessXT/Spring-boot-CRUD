@@ -1,7 +1,7 @@
 package com.example.demo.product;
 
 import com.example.demo.common.BadRequestException;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.model.Product;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
