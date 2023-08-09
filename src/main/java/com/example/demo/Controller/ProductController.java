@@ -27,7 +27,6 @@ public class ProductController {
 
     @Autowired
     ProductService productService;
-    private final static Map<String, Product> productRepo = new HashMap<>();
 
     @RequestMapping(value = "/getAll")
     public ResponseEntity<Object> getProductId(ServletRequest request, ServletResponse response) throws ServletException, IOException {
