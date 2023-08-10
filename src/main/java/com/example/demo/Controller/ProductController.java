@@ -36,14 +36,15 @@ public class ProductController {
 
         Collection<Product> productList = productService.getProduct();
 
-        if(productList.size() == 0) {
+        if (productList.size() == 0) {
             throw new ProductionNotFoundException();
         }
 
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
+
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public ResponseEntity<Object> getProduct(@RequestBody Product product){
+    public ResponseEntity<Object> getProduct(@RequestBody Product product) {
 
         product.validate();
         product.setDate(LocalDateTime.now());
@@ -51,6 +52,7 @@ public class ProductController {
 
         return new ResponseEntity<>(product, HttpStatus.CREATED);
     }
+
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
         product.validate();
@@ -64,8 +66,7 @@ public class ProductController {
             productService.updateProduct(id, product);
 
             return new ResponseEntity<>(exitingProduct, HttpStatus.OK);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("ID Not Found!");
             throw new ProductionNotFoundException();
         }
@@ -76,21 +77,21 @@ public class ProductController {
 //
 //        return new ResponseEntity<>("Product is updated Successfully", HttpStatus.OK);
     }
+
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Object> deleteProduct(@PathVariable("id") String id) {
-        if(id == null) {
+        if (id == null) {
             throw new BadRequestException("ID is Required");
         }
         try {
             Product productId = productService.findById(id);
-            if(productId == null) {
+            if (productId == null) {
                 throw new BadRequestException("No ID Found");
             }
             productService.deleteProduct(id);
 
             return new ResponseEntity<>(productId, HttpStatus.OK);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             throw new ProductionNotFoundException();
         }
     }
